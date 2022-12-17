@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "YourSpotifyColour",
+    "slug": "YourSpotifyColour",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "YourSpotifyColour"
+}
