@@ -50,7 +50,7 @@ const LoginScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (token) {
-      axios("https://api.spotify.com/v1/me/top/tracks?time_range=short_term", {
+      axios("https://api.spotify.com/v1/me/top/tracks?time_range=medium_term", {      //gets the first 20 top songs from 6 months
         method: "GET",
         headers: {
           Accept: "application/json",
