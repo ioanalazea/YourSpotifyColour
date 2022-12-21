@@ -1,7 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { View, StyleSheet, KeyboardAvoidingView, Text } from "react-native";
-import { Button, Image } from "react-native-elements";
+import { View, StyleSheet, KeyboardAvoidingView, TouchableOpacity, Text } from "react-native";
+import {LinearGradient} from 'expo-linear-gradient'
+import {Dimensions} from 'react-native';
 import { useEffect, useState } from "react";
 import { ResponseType, useAuthRequest } from "expo-auth-session";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,6 +13,8 @@ const discovery = {
   authorizationEndpoint: "https://accounts.spotify.com/authorize",
   tokenEndpoint: "https://accounts.spotify.com/api/token",
 };
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -78,25 +80,26 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <StatusBar style="light" />
+      <LinearGradient
+          colors={['#8b6e5e', '#e3d5ca', '#edede9' ]}
+          style={styles.linearGradient}
+        >
       <Text
         style={{
           fontSize: 30,
           fontWeight: "bold",
-          color: "white",
+          color: "#F5EBE0",
           marginBottom: "20%",
         }}
       >
-        top song player
+        your spotify's colour
       </Text>
-      <Button
-        title="Login with Spotify"
-        style={styles.button}
-        onPress={() => {
-          promptAsync();
-        }}
-      />
-      <View style={{ height: 100 }} />
+      <TouchableOpacity onPress={() => {promptAsync();}} style={styles.button}>
+        <Text style={styles.buttonText}>Login with Spotify</Text>
+      </TouchableOpacity>
+
+      </LinearGradient>
+      
     </KeyboardAvoidingView>
   );
 };
@@ -108,11 +111,30 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
+    //backgroundColor: "#D5BDAF",
   },
-
+  linearGradient: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height:windowHeight,
+    width:windowWidth,
+   
+  },
   button: {
     width: 200,
-    marginTop: 50,
+    height: 50,
+    marginTop: 10,
+    backgroundColor: 'black',
+    borderRadius: 30,
+    backgroundColor:"#F5EBE0",
   },
+
+  buttonText:{
+    fontSize: 18,
+    marginTop: 12,
+    color: "#C29F8B",
+    fontWeight: "bold",
+    alignSelf: "center",
+  }
 });

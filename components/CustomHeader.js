@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 
 
 const CustomHeader = (props) => {
@@ -8,7 +7,7 @@ const CustomHeader = (props) => {
       <View style={styles.header}>
         <TouchableOpacity onPress={props.onSelectHome}>
           <Text style={{ fontSize: 30, fontWeight: "600"}}>
-            your top songs
+            your spotify's colour
           </Text>
         </TouchableOpacity>
       </View>
@@ -20,6 +19,7 @@ export default CustomHeader;
 
 const styles = StyleSheet.create({
   header: {
+    height:200,
     paddingHorizontal: "6%",
     paddingVertical: "5%",
     flexDirection: "row",

@@ -7,7 +7,6 @@ import {
   Dimensions,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-//import song_data from "../song_data";
 import SpotifyWebApi from "spotify-web-api-node";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";

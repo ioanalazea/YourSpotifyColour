@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 0 },
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightgrey",
+    backgroundColor: "#D5BDAF",
     overflow: "hidden",
   },
   cardImage: {
@@ -93,5 +93,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     flex: 1,
+    backgroundColor:"#D5BDAF"
   },
 });
